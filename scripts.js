@@ -14,11 +14,14 @@ function buildQuiz() {
 
         //Contains available answers
         for (letter in currentQuestion.Answers) {
+            //Adds a radio button and utilizes $ to add javascript elements to html
             answers.push(
                 <label>
-                    <input type="radio"
+                    <input type="radio" name="question${questionNumber}" value="${letter}">
+                    ${letter} :
+                    ${currentQuestion.answers[letter]}
                 </label>
-            )
+            );
         }
     }
     )
