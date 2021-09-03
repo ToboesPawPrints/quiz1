@@ -23,8 +23,15 @@ function buildQuiz() {
                 </label>
             );
         }
+
+        output.push(
+            `<div class="question">$currentQuestion.question</div>`
+            <div class="answers"> ${answers.join('')}</div>
+        );
+
     }
-    )
+    );
+    quizContainer.innerHtml = output.join('');
 }
 
 //Display the quiz
