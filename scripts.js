@@ -13,3 +13,15 @@ function buildQuiz() {
 buildQuiz();
 
 submitButton.addEventListener('click', showResults);
+
+const myQuestions =[
+{
+    question: "Which animal is a dog?",
+    answers: {
+        a: "Rock",
+        b: "Parrot",
+        c: "Table",
+    },
+},
+
+]
