@@ -4,7 +4,25 @@ const resultsContainer = document.getElementById("results");
 
 const submitButton = document.getElementById("submit");
 
-function buildQuiz() {}
+function buildQuiz() {
+    const output = [];
+    //For loop for each question
+    myQuestions.forEach(
+    (currentQuestion, questionNumber) => {
+        //Variable storing list of possible answers
+        const answers =[];
+
+        //Contains available answers
+        for (letter in currentQuestion.Answers) {
+            answers.push(
+                <label>
+                    <input type="radio"
+                </label>
+            )
+        }
+    }
+    )
+}
 
 //Display the quiz
 
@@ -33,7 +51,7 @@ const myQuestions = [
           c: "Mouse"
       },
       correctAnswer: "a",
-  }
+  },
   //Third Question
   {
   question: "How do birds teach their young to fly?",
