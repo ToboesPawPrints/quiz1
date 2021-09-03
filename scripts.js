@@ -11,3 +11,5 @@ function buildQuiz() {
 //Display the quiz
 
 buildQuiz();
+
+submitButton.addEventListener('click', showResults);
