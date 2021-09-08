@@ -16,22 +16,44 @@ function buildQuiz() {
         for (letter in currentQuestion.Answers) {
             //Adds a radio button and utilizes $ to add javascript elements to html
             answers.push(
-                <label>
+                `<label>
                     <input type="radio" name="question${questionNumber}" value="${letter}">
                     ${letter} :
                     ${currentQuestion.answers[letter]}
-                </label>
+                </label>`
             );
         }
 
         output.push(
-            `<div class="question">$currentQuestion.question</div>`
-            <div class="answers"> ${answers.join('')}</div>
+            `<div class="question">{$currentQuestion.question</div>
+            <div class="answers"> ${answers.join('')}</div>`
         );
 
     }
     );
     quizContainer.innerHtml = output.join('');
+}
+
+function showResults() {
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+    
+    let numCorrect = 0;
+
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+        const answerContainer = answerContainers[questionNumber];
+        const selector = `input[name=question${questionNumbne}]:checked`;
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+        if(userAnswer === currentQuestion.correctAnswer){
+            numCorrect++;
+        }
+        answerContainers[questionNumbner].style.color = 'lightgreen';
+
+        else{
+            answerContainers[questionNumber].style.color = 'red';
+        }
+    });
+    resultsContainerContainer.innerHTML = `${numCorrect} out of ${myQuestions}.length`;
 }
 
 //Display the quiz
